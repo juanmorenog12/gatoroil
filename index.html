@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Momentos - Ashly & Juan</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section id="welcome" class="welcome-screen">
+    <div class="welcome-card">
+      <p class="eyebrow">Nuestro pequeño mapa</p>
+      <h1>Algunos lugares son sólo lugares.<br />Hasta que los compartes con alguien.</h1>
+      <p class="welcome-copy">
+        Por eso quería tener una forma de conservar algunos de ellos.
+      </p>
+      <button id="enterMapBtn" class="primary-btn">Explora el mapa ✦</button>
+    </div>
+  </section>
+
+  <main id="app" class="app hidden">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Lugares y Momentos</p>
+        <h2>Nuestro pequeño mapa</h2>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="memoriesBtn" class="ghost-btn">
+          Memorias
+      </button>
+
+      <button id="resetViewBtn" class="ghost-btn" aria-label="Reset map view">Reiniciar mapa</button>
+    </header>
+
+    <section class="map-shell">
+      <div id="map" aria-label="Interactive map of memories"></div>
+      <aside id="memoriesPanel" class="memories-panel hidden">
+        <div class="memories-panel-header">
+          <div>
+            <p class="eyebrow">Nuestros lugares</p>
+            <h3>Memorias</h3>
+        </div>
+
+        <button
+            id="closeMemoriesBtn"
+            class="close-btn"
+            aria-label="Cerrar memorias"
+          >
+            ×
+          </button>
+        </div>
+
+        <div id="memoriesList" class="memories-list"></div>
+      </aside>
+
+      <div class="legend">
+        <span><b class="star-sample past">★</b> Memoria</span>
+        <span><b class="star-sample future">☆</b> Proximamente</span>
+      </div>
+
+      <aside id="memoryCard" class="memory-card hidden" aria-live="polite">
+        <button id="closeCardBtn" class="close-btn" aria-label="Close memory">×</button>
+        <p id="memoryDate" class="memory-date"></p>
+        <h3 id="memoryTitle"></h3>
+        <img id="memoryImage" class="memory-image hidden" alt="" />
+        <p id="memoryNote" class="memory-note"></p>
+      </aside>
+    </section>
+
+    <section class="footer-note">
+      <p id="memoryCount"></p>
+      <p>Una estrella a la vez.</p>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
