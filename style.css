@@ -601,3 +601,162 @@ h1 {
     max-height: calc(100% - 20px);
   }
 }
+
+/* ============================================================
+   IPHONE / MOBILE SAFARI OPTIMIZATION
+   ============================================================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.welcome-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  padding-left: max(24px, env(safe-area-inset-left));
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding-top: max(16px, env(safe-area-inset-top));
+  padding-right: max(16px, env(safe-area-inset-right));
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+}
+
+.primary-btn,
+.ghost-btn,
+.memory-list-item {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.primary-btn {
+  min-height: 48px;
+}
+
+.memory-card,
+.memories-panel,
+.legend {
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.memory-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: cover;
+}
+
+/* ---------- iPhone / small screens ---------- */
+
+@media (max-width: 640px) {
+
+  .app {
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-right: max(10px, env(safe-area-inset-right));
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding-left: max(10px, env(safe-area-inset-left));
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .topbar-actions {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .topbar-actions .ghost-btn {
+    flex: 1;
+    min-height: 44px;
+  }
+
+  .map-shell {
+    width: 100%;
+
+    min-height: 500px;
+
+    height: calc(100vh - 155px);
+    height: calc(100dvh - 155px);
+
+    border-radius: 18px;
+  }
+
+  .legend {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+
+    justify-content: center;
+  }
+
+  .memory-card {
+    left: 10px;
+    right: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+
+    max-height: 55%;
+    overflow-y: auto;
+  }
+
+  .memories-panel {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+
+    width: auto;
+
+    max-height: calc(100% - 20px);
+
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  .footer-note {
+    flex-direction: column;
+    gap: 3px;
+
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ---------- Very small iPhones ---------- */
+
+@media (max-width: 390px) {
+
+  .topbar h2 {
+    font-size: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .map-shell {
+    height: calc(100vh - 165px);
+    height: calc(100dvh - 165px);
+  }
+
+  .legend {
+    font-size: 0.75rem;
+  }
+
+  .memory-card {
+    padding: 15px;
+  }
+}
